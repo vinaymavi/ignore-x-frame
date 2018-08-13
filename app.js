@@ -24,6 +24,10 @@ app.get('/', (req, res) => {
   res.status(200).send('Hello, world!').end();
 });
 
+app.get('/robots.txt', (req, res) => {
+  res.status(200).send('User-agent: *\nDisallow: /').end();
+});
+
 // Start the server
 const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
