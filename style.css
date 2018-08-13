@@ -1,0 +1,40 @@
+body{
+    margin: 0%;
+}
+#header{
+    background-color: #0b74e4;
+    height: 80px;
+}
+#bnifsc{
+    position: absolute;
+    color: white;
+    font-family: sans-serif;
+    left: 120.5px;
+    top:22px;
+    font-weight: 100;
+    font-size: 32px;
+}
+#bnifsc:visited {
+    color: white;
+}
+
+#bnifsc:hover {
+    color: #064d99;
+}
+#find-by-ifsc{
+    position: absolute;
+    color: white;
+    font-family: sans-serif;
+    left: 288px;
+    font-weight: 100;
+    font-size: 18px;
+    top:30px;
+    text-decoration: none;  
+}
+#find-by-ifsc:visited {
+    color: white;
+}
+
+#find-by-ifsc:hover {
+    color: #064d99;
+}
