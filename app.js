@@ -16,13 +16,33 @@
 'use strict';
 
 // [START app]
-const express = require('express');
+var request = require('request');
+var express = require('express');
+var app = express();
 
-const app = express();
+app.use(express.static('public'));
 
-app.get('/', (req, res) => {
-  res.status(200).send('Hello, world!').end();
-});
+app.use(express.static('public'));
+app.get('/index.htm', function (req, res) {
+  res.sendFile(__dirname + "/" + "index.html");
+})
+
+app.get('/process_get', function (req, res) {
+  // Prepare output in JSON format
+  var response = {
+    url: req.query.url,
+  };
+  // hitting url
+  request(req.query.url, function (error, response, body) {
+    if (!error && response.statusCode == 200) {
+      console.log(body) // Print the google web page.
+      res.setHeader('content-type', 'text/html');
+      res.end(response.body);
+    }
+  })
+  console.log(response);
+  //res.end(JSON.stringify(response));
+})
 
 app.get('/robots.txt', (req, res) => {
   res.status(200).send('User-agent: *\nDisallow: /').end();
@@ -34,4 +54,5 @@ app.listen(PORT, () => {
   console.log(`App listening on port ${PORT}`);
   console.log('Press Ctrl+C to quit.');
 });
+
 // [END app]
