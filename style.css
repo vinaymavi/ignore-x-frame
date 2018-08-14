@@ -1,5 +1,6 @@
 body{
     margin: 0%;
+    background-color: rgb(234, 238, 238);
 }
 #header{
     background-color: #0b74e4;
@@ -37,4 +38,51 @@ body{
 
 #find-by-ifsc:hover {
     color: #064d99;
+}
+#url-form{
+    position: absolute;
+    left: 300px;
+    top: 100px;
+   }
+#url-tool{
+    position: relative;
+}
+#enter-url-field{
+    position: relative;
+    width: 650px;
+    height: 40px;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    font-size: 18px;
+    padding-left: 10px;
+    color: rgba(0, 0, 0, 0.747);
+    border-style: ridge;
+    border-image-outset: 10px;
+    border-width: 2px;  
+    border-color: rgb(255, 199, 44);
+    box-shadow: 20px;
+    outline: inherit;
+    top: 1px;
+}
+#enter-url-field::placeholder{
+    color: rgb(186, 192, 192);
+}
+#render-site{
+    position: relative;
+    width: 130px;
+    height: 46px;
+    border-style: solid;
+    border-color:rgb(255, 170, 90);
+    background-color: rgb(255, 170, 90);
+    color: rgba(0, 0, 0, 0.664);
+    font-size: 16px;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    outline:inherit;
+    text-align: center;
+    word-spacing: 2px;
+}
+#render-site:hover{
+    background-color: rgb(255, 148, 42);
+    color: azure;
 }
