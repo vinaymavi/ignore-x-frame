@@ -69,20 +69,28 @@ body{
 }
 #render-site{
     position: relative;
-    width: 130px;
-    height: 46px;
+    padding-top: 14px;
+    padding-bottom: 14px;
+    padding-left: 15px;
+    padding-right: 15px;
     border-style: solid;
-    border-color:rgb(255, 170, 90);
-    background-color: rgb(255, 170, 90);
-    color: rgba(0, 0, 0, 0.664);
+    border:0px;
     font-size: 16px;
     border-top-right-radius: 15px;
     border-bottom-right-radius: 15px;
     outline:inherit;
     text-align: center;
     word-spacing: 2px;
-}
-#render-site:hover{
     background-color: rgb(255, 148, 42);
     color: azure;
+    text-decoration: none;
+    font-family: sans-serif;
+}
+#render-site:hover{
+    background-color: rgb(255, 170, 90);
+    color: rgba(0, 0, 0, 0.664);
+}
+#render-site:focus{
+    background: rgb(141, 73, 6);
+    color: bisque;
 }
