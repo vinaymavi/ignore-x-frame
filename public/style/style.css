@@ -14,6 +14,7 @@ body{
     top:22px;
     font-weight: 100;
     font-size: 32px;
+    text-decoration: none;
 }
 #bnifsc:visited {
     color: white;
