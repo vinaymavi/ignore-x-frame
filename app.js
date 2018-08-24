@@ -18,6 +18,9 @@
 // [START app]
 var request = require('request');
 var express = require('express');
+var cheerio = require('cheerio');
+var util = require('util');
+var url = require('url-parse');
 var app = express();
 
 app.use(express.static('static'));
@@ -39,13 +42,29 @@ app.get('/process_get', function (req, res) {
   // hitting url
   request(req.query.url, function (error, response, body) {
     if (!error && response.statusCode == 200) {
-      console.log(body) // Print the google web page.
+      // console.log(body) // Print the google web page.
+      var $ = cheerio.load(response.body);
+  $('link').each(function(index,value){
+        var linkw = $(value).attr('href');
+        var parsed = url(linkw);
+        var newurl= parsed.set('hostname','xyz.com');
+        $(this).attr('href',newurl.href);
+        //console.log(util.inspect(value,false,1));
+      });
+ $('script').each(function(index,value){
+        var linkw = $(value).attr('src');
+        var parsed = url(linkw);
+        var newurl= parsed.set('hostname','script.com');
+        $(this).attr('href',newurl.href);
+        $(this).attr('src',newurl.href);
+        //console.log(util.inspect(value,false,1));
+      });
+
       res.setHeader('content-type', 'text/html');
-      res.end(response.body);
+      res.end($.html());
+      //res.send(response.body);
     }
   })
-  console.log(response);
-  //res.end(JSON.stringify(response));
 })
 
 app.get('/robots.txt', (req, res) => {
