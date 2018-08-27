@@ -38,30 +38,56 @@ app.get('/process_get', function (req, res) {
   // Prepare output in JSON format
   var response = {
     url: req.query.url,
+    //linkurl : req.query.linkurl,
+    //scripturl : req.query.scripturl,
   };
   // hitting url
   request(req.query.url, function (error, response, body) {
     if (!error && response.statusCode == 200) {
       // console.log(body) // Print the google web page.
       var $ = cheerio.load(response.body);
-  $('link').each(function(index,value){
+
+      function newUrl(actualurl,replaceurl){
+      var parsed = url(actualurl);
+      var newurl = parsed.set('hostname',replaceurl);
+      return newurl.href;
+    }
+
+      function replacement(target,attribute,replaceurl){
+      $(target).each(function(index,value){
+        var linkw = $(value).attr(attribute);
+        var data = newUrl(linkw,replaceurl);
+        $(this).attr(attribute,data);
+        //console.log(util.inspect(value,false,1));
+      });
+    }
+
+    
+
+    replacement('link','href',req.query.linkurl);
+    replacement('script','href',req.query.scripturl);
+    replacement('script','src',req.query.scripturl);
+      res.setHeader('content-type', 'text/html');
+      res.end($.html());
+
+
+  /*$('link').each(function(index,value){
         var linkw = $(value).attr('href');
         var parsed = url(linkw);
-        var newurl= parsed.set('hostname','xyz.com');
+        var newurl= parsed.set('hostname',req.query.linkurl);
         $(this).attr('href',newurl.href);
         //console.log(util.inspect(value,false,1));
       });
  $('script').each(function(index,value){
         var linkw = $(value).attr('src');
         var parsed = url(linkw);
-        var newurl= parsed.set('hostname','script.com');
+        var newurl= parsed.set('hostname',req.query.scripturl);
         $(this).attr('href',newurl.href);
         $(this).attr('src',newurl.href);
         //console.log(util.inspect(value,false,1));
-      });
+      });*/
 
-      res.setHeader('content-type', 'text/html');
-      res.end($.html());
+    
       //res.send(response.body);
     }
   })
