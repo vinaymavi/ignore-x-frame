@@ -13,73 +13,56 @@
  * limitations under the License.
  */
 
-'use strict';
+"use strict";
 
 // [START app]
-var request = require('request');
-var express = require('express');
-var cheerio = require('cheerio');
-var util = require('util');
-var url = require('url-parse');
+var request = require("request");
+var express = require("express");
+var cheerio = require("./cheerio");
+var URL = require("url-parse");
 var app = express();
 
-app.use(express.static('static'));
+app.use(express.static("static"));
 
-app.use(express.static('public'));
-app.get('/', function (req, res) {
+app.use(express.static("public"));
+app.get("/", function(req, res) {
   res.sendFile(__dirname + "/" + "index.html");
-})
+});
 
-app.get('/index.html', function (req, res) {
+app.get("/index.html", function(req, res) {
   res.sendFile(__dirname + "/" + "index.html");
-})
+});
 
-app.get('/process_get', function (req, res) {
+app.get("/process_get", function(req, res) {
   // Prepare output in JSON format
   var response = {
-    url: req.query.url,
+    url: req.query.url
   };
   // hitting url
-  request(req.query.url, function (error, response, body) {
+  request(req.query.url, function(error, response, body) {
     if (!error && response.statusCode == 200) {
-      // console.log(body) // Print the google web page.
-      var $ = cheerio.load(response.body);
-
-      function newUrl(actualurl,replaceurl){
-      var parsed = url(actualurl);
-      var newurl = parsed.set('hostname',replaceurl);
-      return newurl.href;
+      cheerio.load(response.body);
+      const url = new URL(req.query.url);
+      cheerio.set_host_name(url.origin);
+      res.setHeader("content-type", "text/html");
+      cheerio.check_replace_media();
+      res.end(cheerio.html());
     }
+  });
+});
 
-      function replacement(target,attribute,replaceurl){
-      $(target).each(function(index,value){
-        var linkw = $(value).attr(attribute);
-        var data = newUrl(linkw,replaceurl);
-        $(this).attr(attribute,data);
-        //console.log(util.inspect(value,false,1));
-      });
-    }
-
-    
-    replacement('link','href',req.get('host'));
-    replacement('script','href',req.get('host'));
-    replacement('script','src',req.get('host'));
-      res.setHeader('content-type', 'text/html');
-      res.end($.html());
-
-    }
-  })
-})
-
-app.get('/robots.txt', (req, res) => {
-  res.status(200).send('User-agent: *\nDisallow: /').end();
+app.get("/robots.txt", (req, res) => {
+  res
+    .status(200)
+    .send("User-agent: *\nDisallow: /")
+    .end();
 });
 
 // Start the server
 const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
   console.log(`App listening on port ${PORT}`);
-  console.log('Press Ctrl+C to quit.');
+  console.log("Press Ctrl+C to quit.");
 });
 
 // [END app]
