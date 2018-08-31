@@ -19,6 +19,8 @@ function throw_exception(message = "Exception Occur") {
 
 function check_replace_media() {
   update_links();
+  update_scripts();
+  update_images();
 }
 
 function update_links() {
@@ -27,8 +29,17 @@ function update_links() {
   });
 }
 
-function update_scripts() {}
-function update_images() {}
+function update_scripts() {
+ $("script").each((index, element) => {
+    update_relative_path(element, "src");
+  }); 
+}
+
+function update_images() {
+ $("img").each((index, element) => {
+    update_relative_path(element, "src");
+  }); 
+}
 
 function update_fonts() {}
 
