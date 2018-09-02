@@ -44,7 +44,7 @@
   dependencies:
     arrify "^1.0.1"
 
-"@google-cloud/nodejs-repo-tools@^2.3.0":
+"@google-cloud/nodejs-repo-tools@2.3.3":
   version "2.3.3"
   resolved "https://registry.yarnpkg.com/@google-cloud/nodejs-repo-tools/-/nodejs-repo-tools-2.3.3.tgz#a5447c6dad87777ccafbf8d666344ac65394d094"
   dependencies:
@@ -1679,7 +1679,7 @@ expand-range@^1.8.1:
   dependencies:
     fill-range "^2.1.0"
 
-express@^4.16.3:
+express@4.16.3:
   version "4.16.3"
   resolved "https://registry.yarnpkg.com/express/-/express-4.16.3.tgz#6af8a502350db3246ecc4becf6b5a34d22f7ed53"
   dependencies:
@@ -3285,7 +3285,7 @@ node-pre-gyp@^0.10.0:
     semver "^5.3.0"
     tar "^4"
 
-nodemon@^1.18.3:
+nodemon@1.18.3:
   version "1.18.3"
   resolved "https://registry.yarnpkg.com/nodemon/-/nodemon-1.18.3.tgz#46e681ee0dd1b590562e03019b4c5df234f906f9"
   dependencies:
@@ -4002,7 +4002,7 @@ repeating@^2.0.0:
   dependencies:
     is-finite "^1.0.0"
 
-request@^2.88.0:
+request@2.88.0:
   version "2.88.0"
   resolved "https://registry.yarnpkg.com/request/-/request-2.88.0.tgz#9c2fca4f7d35b592efe57c7f0a55e81052124fef"
   dependencies:
@@ -4153,7 +4153,7 @@ sax@^1.2.4:
   version "1.2.4"
   resolved "https://registry.yarnpkg.com/sax/-/sax-1.2.4.tgz#2816234e2378bddc4e5354fab5caa895df7100d9"
 
-semistandard@^12.0.1:
+semistandard@12.0.1:
   version "12.0.1"
   resolved "https://registry.yarnpkg.com/semistandard/-/semistandard-12.0.1.tgz#82190c720b01cf68e3051e0985578f0b1d596683"
   dependencies:
