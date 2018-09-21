@@ -34,7 +34,8 @@ app.get("/index.html", function(req, res) {
 });
 
 app.get("/process_get", function(req, res) {
-  // Prepare output in JSON format
+  // Prepare output in JSON formatx
+
   var response = {
     url: req.query.url
   };
@@ -46,7 +47,11 @@ app.get("/process_get", function(req, res) {
       cheerio.set_host_name(url.origin);
       res.setHeader("content-type", "text/html");
       cheerio.check_replace_media();
-      res.end(cheerio.html());
+      //res.send('',cheerio.html());
+      var data = cheerio.html().toString();
+      response  += '<iframe>'+data+'</iframe>';
+      res.status(200).send(response);
+      //res.status(200).send(cheerio.html().toString());
     }
   });
 });

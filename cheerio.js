@@ -41,11 +41,23 @@ function update_images() {
   }); 
 }
 
-function update_fonts() {}
+function update_fonts() {
+  $("link").each((index, element) => {
+    update_relative_path(element, "src");
+  }); 
+}
 
-function update_audio() {}
+function update_audio() {
+$("source").each((index, element) => {
+    update_relative_path(element, "src");
+  }); 
+}
 
-function update_video() {}
+function update_video() {
+$("video").each((index, element) => {
+    update_relative_path(element, "src");
+  }); 
+}
 
 function html() {
   return $.html();

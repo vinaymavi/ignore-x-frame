@@ -48,12 +48,6 @@ body{
 #url-tool{
     position: relative;
 }
-#url-linktool{
-    position: relative;
-}
-#url-scripttool{
-    position: relative;
-}
 
 #enter-url-field{
     position: relative;
@@ -73,46 +67,6 @@ body{
     top: 1px;
 }
 #enter-url-field::placeholder{
-    color: rgb(186, 192, 192);
-}
-#enter-linkurl-field{
-    position: relative;
-    width: 650px;
-    height: 40px;
-    border-top-left-radius: 15px;
-    border-bottom-left-radius: 15px;
-    font-size: 18px;
-    padding-left: 10px;
-    color: rgba(0, 0, 0, 0.747);
-    border-style: ridge;
-    border-image-outset: 10px;
-    border-width: 2px;  
-    border-color: rgb(255, 199, 44);
-    box-shadow: 20px;
-    outline: inherit;
-    top: 1px;
-}
-#enter-linkurl-field::placeholder{
-    color: rgb(186, 192, 192);
-}
-#enter-scripturl-field{
-   position: relative;
-    width: 650px;
-    height: 40px;
-    border-top-left-radius: 15px;
-    border-bottom-left-radius: 15px;
-    font-size: 18px;
-    padding-left: 10px;
-    color: rgba(0, 0, 0, 0.747);
-    border-style: ridge;
-    border-image-outset: 10px;
-    border-width: 2px;  
-    border-color: rgb(255, 199, 44);
-    box-shadow: 20px;
-    outline: inherit;
-    top: 1px; 
-}
-#enter-scripturl-field::placeholder{
     color: rgb(186, 192, 192);
 }
 #render-site{
