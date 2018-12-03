@@ -122,9 +122,9 @@
   dependencies:
     arrify "^1.0.1"
 
-"@google-cloud/nodejs-repo-tools@3.0.0":
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/@google-cloud/nodejs-repo-tools/-/nodejs-repo-tools-3.0.0.tgz#7247ef887565008f56c0f8f47ad6f05a4fa90409"
+"@google-cloud/nodejs-repo-tools@3.1.0":
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/@google-cloud/nodejs-repo-tools/-/nodejs-repo-tools-3.1.0.tgz#21978620329998c201ecfc487e1c127e2b9ce20a"
   dependencies:
     "@sindresorhus/slugify" "^0.6.0"
     ava "0.25.0"
@@ -139,7 +139,7 @@
     sinon "7.1.1"
     supertest "^3.2.0"
     yargs "^12.0.1"
-    yargs-parser "11.0.0"
+    yargs-parser "^11.1.0"
 
 "@ladjs/time-require@^0.1.4":
   version "0.1.4"
@@ -5260,18 +5260,18 @@ yallist@^3.0.0, yallist@^3.0.2:
   version "3.0.2"
   resolved "https://registry.yarnpkg.com/yallist/-/yallist-3.0.2.tgz#8452b4bb7e83c7c188d8041c1a837c773d6d8bb9"
 
-yargs-parser@11.0.0:
-  version "11.0.0"
-  resolved "https://registry.yarnpkg.com/yargs-parser/-/yargs-parser-11.0.0.tgz#d9fd0f0cd551a2a2ef9bbf42606ffb6211634232"
-  dependencies:
-    camelcase "^5.0.0"
-    decamelize "^1.2.0"
-
 yargs-parser@^10.1.0:
   version "10.1.0"
   resolved "https://registry.yarnpkg.com/yargs-parser/-/yargs-parser-10.1.0.tgz#7202265b89f7e9e9f2e5765e0fe735a905edbaa8"
   dependencies:
     camelcase "^4.1.0"
+
+yargs-parser@^11.1.0:
+  version "11.1.1"
+  resolved "https://registry.yarnpkg.com/yargs-parser/-/yargs-parser-11.1.1.tgz#879a0865973bca9f6bab5cbdf3b1c67ec7d3bcf4"
+  dependencies:
+    camelcase "^5.0.0"
+    decamelize "^1.2.0"
 
 yargs-parser@^9.0.2:
   version "9.0.2"
