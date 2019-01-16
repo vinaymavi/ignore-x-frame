@@ -1,19 +1,26 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <link rel="stylesheet" type="text/css" href="/style/style.css">
-        <title>Ignore X Frame| Ignore X Frame header for application.</title>
-    </head>
-    <body>
-        <div id=header>
-            <a href="#" id="bnifsc">X-Frame</a>
-            <!--a id="find-by-ifsc" href="" >Find By IFSC</a-->
+  <head>
+    <link rel="stylesheet" type="text/css" href="/style/style.css" />
+    <title>Ignore X Frame| Ignore X Frame header for application.</title>
+  </head>
+  <body>
+    <div id="header">
+        <a href="#" id="bnifsc">X-Frame</a>
+        <div id="url-tool">
+          <input
+            type="text"
+            name="url"
+            placeholder="Please enter your link"
+            id="enter-url-field"
+          />
+          <button type="submit" id="render-site">Create URL</button>
         </div>
-        <form action = "/process_get" method = "GET" id="url-form">
-            <div id="url-tool">
-                <input type="text" name='url' placeholder="Please enter your link" id="enter-url-field">
-                <button type="submit" id="render-site">Visit site</button>
-            </div>
-        </form> 
-    </body>
+    </div>
+    <div class="genrated-url-div">
+        <input type="text" disabled id="genrated-url"/><button id='copy-url'>copy</button>
+    </div>
+    <iframe src="" id="iframe" frameborder="0"></iframe>
+    <script src="/script/script.js"></script>
+  </body>
 </html>
