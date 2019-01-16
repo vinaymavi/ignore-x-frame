@@ -49,7 +49,7 @@ app.get('/process_get', function (req, res) {
 })
 
 app.get('/robots.txt', (req, res) => {
-  res.status(200).send('User-agent: *\nDisallow: /').end();
+  res.status(200).send('User-agent: *\n Allow: /').end();
 });
 
 // Start the server
