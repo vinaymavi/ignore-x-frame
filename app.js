@@ -20,6 +20,13 @@ var request = require('request');
 var express = require('express');
 var path = require('path')
 var app = express();
+var aboutUs = require("./routes/about_us");
+var privacy = require("./routes/privacy");
+var contactUs = require("./routes/contact_us")
+
+app.use('/about_us', aboutUs);
+app.use('/privacy', privacy);
+app.use('/contact_us', contactUs);
 
 app.use(express.static(path.join(__dirname,'public')));
 
