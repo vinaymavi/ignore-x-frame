@@ -28,7 +28,9 @@ app.use('/about_us', aboutUs);
 app.use('/privacy', privacy);
 app.use('/contact_us', contactUs);
 
-app.use(express.static(path.join(__dirname,'public')));
+app.set('view engine', 'ejs');
+
+app.use(express.static('public'));
 
 app.get('/', function (req, res) {
   res.sendFile(__dirname + "/" + "index.html");
