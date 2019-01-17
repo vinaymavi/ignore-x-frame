@@ -122,3 +122,26 @@ iframe{
     width: 18%;
     height: 40px
 }
+.footer{
+    background: #0b74e4;
+    height: 60px;
+    
+}
+.ul{
+    float:right;
+    margin: 0;
+    padding: 0;
+    height: 60px;
+    line-height: 60px;
+} 
+ul li{
+    display: inline;
+    padding: 0px 20px;
+    line-height: 16px;
+    border-right: 1px solid #fff;
+
+}
+ul li a{
+    text-decoration: none;
+    color: rgb(255,255,255);
+}
